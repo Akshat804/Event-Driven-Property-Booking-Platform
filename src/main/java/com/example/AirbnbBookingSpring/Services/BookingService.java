@@ -71,6 +71,7 @@ public class BookingService implements IBookingService{
 
       booking= bookingWriteRepository.save(booking);
       redisWriteRepository.writeBookingReadModel(booking);
+
 return booking;
 
 
