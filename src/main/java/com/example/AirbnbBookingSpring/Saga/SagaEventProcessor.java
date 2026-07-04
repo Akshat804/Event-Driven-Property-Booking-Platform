@@ -32,6 +32,8 @@ public class SagaEventProcessor {
                 log.info("Booking cancelled for booking id: {}", sagaEvent.getPayload().get("bookingId"));
                 break;
             case "BOOKING_COMPENSATED":
+                availabilityhandeler.handleAvailabilityCompensated(sagaEvent);
+                bookingeventhandeler.handleBookingCompensated(sagaEvent);
                 log.info("Booking compensated for booking id: {}", sagaEvent.getPayload().get("bookingId"));
                 break;
             default:
